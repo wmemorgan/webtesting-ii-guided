@@ -1,6 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import { render, getAllByTestId } from '@testing-library/react'
+import { render } from '@testing-library/react'
 import '@testing-library/react/cleanup-after-each'
 import 'jest-dom/extend-expect'
 
@@ -11,7 +10,7 @@ it('should render', () => {
 })
 
 it('should display default message with no players', () => {
-    const { queryByText, toBeInTheDocument } = render(<Players />)
+    const { queryByText } = render(<Players />)
     const defaultMessage = queryByText(/no players/i)
 
     expect(defaultMessage).toBeInTheDocument()
